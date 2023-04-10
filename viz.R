@@ -58,4 +58,14 @@ df %>%
   tab_footnote("Created by Cole Baril - colebaril.ca | Data: CDC | Software: R") %>% 
   gtsave("pct_change.html")
 
+# SAVE DATA ----
+
+df %>% 
+  select(-deaths) %>% 
+  pivot_wider(names_from = year, values_from = rate) %>% 
+  rename("y2020" = "2020",
+         "y2005" = "2005") %>% 
+  mutate(pct_change = (y2020/y2005)*100-100) %>% 
+  write.csv(here("Data/pct_change.csv"))
+
 
