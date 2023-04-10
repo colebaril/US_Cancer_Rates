@@ -6,14 +6,7 @@ library(plotly)
 
 df <- read_csv("Raw/data-table.csv") %>% 
   clean_names() %>% 
-  select(-"url") %>% 
-  drop_na()
-
-label_NA <- c('NA' = '')
-
-NA_labeller <- function(variable,value){
-  return(label_NA[value])
-}
+  select(-"url")
 
 
 
