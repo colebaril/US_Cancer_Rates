@@ -55,6 +55,7 @@ df %>%
   fmt_number(columns = pct_change,
              rows = everything(),
              decimals = 2) %>% 
-  tab_footnote("Created by Cole Baril - colebaril.ca | Data: CDC | Software: R")
+  tab_footnote("Created by Cole Baril - colebaril.ca | Data: CDC | Software: R") %>% 
+  gtsave("pct_change.html")
 
 
